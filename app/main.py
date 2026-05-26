@@ -23,8 +23,29 @@ def route_add():
     a = float(request.args.get('a'))
     b = float(request.args.get('b'))
     return jsonify({"result": add(a, b)})
-    
-    
+
+
+@app.route('/subtract')
+def route_subtract():
+    a = float(request.args.get('a'))
+    b = float(request.args.get('b'))
+    return jsonify({"result": subtract(a, b)})
+
+
+@app.route('/multiply')
+def route_multiply():
+    a = float(request.args.get('a'))
+    b = float(request.args.get('b'))
+    return jsonify({"result": multiply(a, b)})
+
+
+@app.route('/divide')
+def route_divide():
+    a = float(request.args.get('a'))
+    b = float(request.args.get('b'))
+    return jsonify({"result": divide(a, b)})
+
+
 @app.route('/power')
 def route_power():
     a = float(request.args.get('a'))
