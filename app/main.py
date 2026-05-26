@@ -12,7 +12,8 @@ def home():
             "/add?a=1&b=2",
             "/subtract?a=5&b=3",
             "/multiply?a=4&b=3",
-            "/divide?a=10&b=2"
+            "/divide?a=10&b=2",
+            "/power?a=2&b=8"
         ]
     })
 
@@ -22,6 +23,13 @@ def route_add():
     a = float(request.args.get('a'))
     b = float(request.args.get('b'))
     return jsonify({"result": add(a, b)})
+    
+    
+@app.route('/power')
+def route_power():
+    a = float(request.args.get('a'))
+    b = float(request.args.get('b'))
+    return jsonify({"result": a ** b})
 
 
 if __name__ == '__main__':
